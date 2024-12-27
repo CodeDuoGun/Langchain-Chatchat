@@ -110,6 +110,7 @@ class KBFaissPool(_FaissPool):
                         f"loading vector store in '{kb_name}/vector_store/{vector_name}' from disk."
                     )
                     vs_path = get_vs_path(kb_name, vector_name)
+                    logger.info(f"vs_path:{vs_path}")
 
                     if os.path.isfile(os.path.join(vs_path, "index.faiss")):
                         embeddings = get_Embeddings(embed_model=embed_model)
